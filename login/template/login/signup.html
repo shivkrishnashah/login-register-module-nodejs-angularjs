@@ -1,0 +1,57 @@
+	<div class="limiter">
+		<div class="container-login100" data-ng-init = "init()">
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+				<form class="login100-form validate-form flex-sb flex-w" name="signupForm" id="signupForm" data-ng-submit="register(user)">
+					<span class="login100-form-title p-b-32">
+						Create Account
+					</span>
+
+					<span class="txt1 p-b-11">
+						Username
+					</span>
+					<div class="wrap-input100 validate-input m-b-36">
+						<input class="input100" type="text" name="username" ng-model="user.username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<span class="txt1 p-b-11">
+						Password
+					</span>
+					<div class="wrap-input100 validate-input m-b-12">
+						<input class="input100" type="password" name="pass" ng-model="user.password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<span class="txt1 p-b-11">
+						contact
+					</span>
+					<div class="wrap-input100 validate-input m-b-12">
+						<input class="input100" type="tel" name="contact" ng-model="user.contact">
+						<span class="focus-input100"></span>
+					</div>
+
+					<span class="txt1 p-b-11">
+						Email
+					</span>
+					<div class="wrap-input100 validate-input m-b-12">
+						<input class="input100" type="email" name="email" ng-model="user.email">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-48">
+						<div class="contact100-form-checkbox">
+							<button type="submit" class="login100-form-btn">
+								Register
+							</button>
+						</div>
+						<div class="contact100-form-checkbox">
+							<button type="button" class="login100-form-btn" ui-sref = "login">
+								Back to login
+							</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
