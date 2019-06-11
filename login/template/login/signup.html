@@ -1,7 +1,7 @@
 	<div class="limiter">
 		<div class="container-login100" data-ng-init = "init()">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w" name="signupForm" id="signupForm" data-ng-submit="register(user)">
+				<form class="login100-form validate-form flex-sb flex-w" name="signupForm" id="signupForm" data-ng-submit="register(signupForm.$valid)" novalidate>
 					<span class="login100-form-title p-b-32">
 						Create Account
 					</span>
@@ -9,32 +9,45 @@
 					<span class="txt1 p-b-11">
 						Username
 					</span>
+					<div data-ng-show="signupForm.$submitted && signupForm.username.$invalid" role="alert" class="ng-active" style="">
+              	<span class="text-danger" ng-message="required">Username is required</span>
+          </div>
 					<div class="wrap-input100 validate-input m-b-36">
-						<input class="input100" type="text" name="username" ng-model="user.username">
+						<input class="input100" type="text" name="username" ng-model="user.username" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<span class="txt1 p-b-11">
 						Password
 					</span>
+					<div data-ng-show="signupForm.$submitted && signupForm.pass.$invalid" role="alert" class="ng-active" style="">
+								<span class="text-danger" ng-message="required">Password is required</span>
+					</div>
 					<div class="wrap-input100 validate-input m-b-12">
-						<input class="input100" type="password" name="pass" ng-model="user.password">
+						<input class="input100" type="password" name="pass" ng-model="user.password" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<span class="txt1 p-b-11">
-						contact
+						Contact
 					</span>
+					<div data-ng-show="signupForm.$submitted && signupForm.contact.$invalid" role="alert" class="ng-active" style="">
+								<span class="text-danger" ng-message="required">Contact is required</span>
+					</div>
 					<div class="wrap-input100 validate-input m-b-12">
-						<input class="input100" type="tel" name="contact" ng-model="user.contact">
+						<input class="input100" type="tel" name="contact" ng-model="user.contact" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<span class="txt1 p-b-11">
 						Email
 					</span>
+					<div data-ng-show="signupForm.$submitted && signupForm.email.$error" role="alert" class="ng-active" style="">
+							<span class="text-danger" ng-show="signupForm.email.$error.required">Email is required.</span>
+							<span class="text-danger" ng-show="signupForm.email.$error.email">Invalid email address.</span>
+					</div>
 					<div class="wrap-input100 validate-input m-b-12">
-						<input class="input100" type="email" name="email" ng-model="user.email">
+						<input class="input100" type="email" name="email" ng-model="user.email" required>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -49,6 +62,11 @@
 								Back to login
 							</button>
 						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12 text-success">{{successMesssage}}</div>
+						<div class="col-sm-12 text-danger">{{errorMesssage}}</div>
 					</div>
 
 				</form>
