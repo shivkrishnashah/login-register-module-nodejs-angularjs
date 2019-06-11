@@ -23,8 +23,8 @@ Feel free to use it, it's for you. :computer:
 
 
 - Login and Registration From Based on HTML,CSS.
-- Mysql libraray for store data.
-- Encrypt password using bcrypr-hashing.
+- Mysql for store data.
+- Encrypt password using bcryprt-hashing.
 - Routing
 - User Friendly Coding Interface.
 - Made By :heart: For All NewBies Developer
